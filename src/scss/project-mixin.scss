@@ -1,0 +1,151 @@
+@import '../module/stooges-variables';
+@import '../module/stooges-mixin';
+@import './project-variables.scss';
+
+@mixin button {
+    background: $color-main;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: $h3;
+    padding: 12px $space-3;
+    transition: .3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        background: darken($color-main, 10%);
+    }
+}
+
+@mixin form() {
+    input,
+    textarea,
+    select {
+        padding: $space-1 $space-2;
+        font-family: $font-family-1;
+        font-size: $h3;
+        outline: none;
+        width: 100%;
+        background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=);
+        border-radius: 0;
+        border: 1px solid $color-basic-2;
+
+        &:focus {
+            background-color: $color-basic-1;
+        }
+    }
+
+    button {
+        @include button();
+    }
+}
+
+@mixin mainTitle() {
+    text-align: center;
+    position: relative;
+    font-weight: normal;
+    font-family: $font-family-2;
+    font-size: 24px;
+    padding: $space-2 0;
+    margin-bottom: $space-2;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: calc(50% - 40px);
+        width: 80px;
+        height: 2px;
+        background: $color-main;
+    }
+
+    span {
+        background: white;
+        position: relative;
+        padding: 0 $space-4;
+    }
+}
+
+@mixin component-gap {
+    padding: $space-8 0;
+
+    @media #{$breakpoint-only-xs} {
+        padding: $space-4 0;
+    }
+}
+
+@mixin owl-dots() {
+    width: 100%;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    .owl-dot {
+        display: inline-block;
+        zoom: 1;
+
+        span {
+            height: 12px;
+            width: 12px;
+            margin: 0 2px;
+            display: block;
+            -webkit-backface-visibility: visible;
+            transition: opacity 200ms ease;
+            border-radius: 50%;
+            border: 2px solid $color-main;
+        }
+
+        &.active span,
+        &:hover span {
+            background: $color-main;
+        }
+    }
+}
+
+@mixin blog() {
+    border: 1px solid $color-basic-2;
+    text-align: left;
+    width: 100%;
+
+    .title {
+        padding: $space-2;
+        border-bottom: 1px solid $color-basic-2;
+        min-height: 75px;
+
+        a {
+            color: $font-color-1;
+            font-family: $font-family-2;
+            font-size: 17px;
+        }
+    }
+
+    .date-author {
+        border-bottom: 1px solid $color-basic-2;
+        padding: 12px $space-2;
+
+        & > div {
+            display: inline-block;
+            margin-right: $space-2;
+
+            @media #{$breakpoint-only-sm} {
+                display: block;
+            }
+        }
+
+        .icon {
+            color: $color-main;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        span {
+            margin-left: 6px;
+            font-size: $h3;
+            color: $font-color-2;
+        }
+    }
+
+    .summary {
+        padding: 12px $space-2;
+    }
+}

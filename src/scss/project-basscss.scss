@@ -1,0 +1,150 @@
+@import '../module/stooges-variables';
+@import '../module/stooges-mixin';
+@import './project-mixin';
+@import './project-variables';
+
+::selection {
+    background: $color-main;
+    color: #000;
+}
+
+[class*='flaticon-']:before{
+    display: inline-block;
+font-family: "Flaticon";
+font-style: normal;
+font-weight: normal;
+font-variant: normal;
+line-height: 1;
+text-decoration: inherit;
+text-rendering: optimizeLegibility;
+text-transform: none;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased;
+font-smoothing: antialiased;
+}
+
+.flaticon-next:before { content: "\f100"; }
+.flaticon-left-arrow:before { content: "\f101"; }
+.flaticon-up-arrow:before { content: "\f102"; }
+.flaticon-quote:before { content: "\f103"; }
+.flaticon-right-quote-sign:before { content: "\f104"; }
+.flaticon-add-button:before { content: "\f105"; }
+.flaticon-minus-sign-inside-a-black-circle:before { content: "\f106"; }
+.flaticon-placeholder:before { content: "\f107"; }
+.flaticon-phone-call:before { content: "\f108"; }
+.flaticon-e-mail-envelope:before { content: "\f109"; }
+.flaticon-whatsapp-logo:before { content: "\f10a"; }
+.flaticon-group:before { content: "\f10b"; }
+.flaticon-calendar-with-spring-binder-and-date-blocks:before { content: "\f10c"; }
+.flaticon-quill-drawing-a-line:before { content: "\f10d"; }
+.flaticon-menu:before { content: "\f10e"; }
+.flaticon-language:before { content: "\f10f"; }
+.flaticon-spinner-of-dots:before { content: "\f110"; }
+.flaticon-facebook-logo-button:before { content: "\f111"; }
+
+.overflow-auto {
+    overflow: auto
+}
+
+.justify-center {
+    justify-content: center
+}
+
+.border-top {
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.ck {
+    * {
+        line-height: 1.25;
+    }
+}
+
+.mxnr {
+    margin-left: -$space-1;
+    margin-right: -$space-1;
+}
+
+.pr {
+    padding: $space-1;
+}
+
+@media #{$breakpoint-up-lg} {
+    .mxnr {
+        margin-left: -$space-2;
+        margin-right: -$space-2;
+    }
+
+    .pr {
+        padding: $space-2;
+    }
+}
+
+@media #{$breakpoint-only-sm} {
+    .sm-flex {
+        display: flex
+    }
+    h1, .h1 {
+        font-size: 1.5rem;
+    }
+
+    h2, .h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media #{$breakpoint-only-md} {
+    .md-flex {
+        display: flex
+    }
+}
+
+@media #{$breakpoint-only-lg} {
+    .lg-flex {
+        display: flex
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+[class^='btn-'] {
+    font-family: $font-family-1;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    display: block;
+    outline: none;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+
+    &.disabled {
+        color: $font-color-4;
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.btn-primary {
+    background: $color-main;
+
+    &:hover:not(.disabled),
+    &.active:not(.disabled) {
+        background: darken($color-main, 5%);
+        color: white;
+    }
+}
